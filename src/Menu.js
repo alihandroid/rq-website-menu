@@ -1,9 +1,8 @@
-import { useContext } from "react";
 import MenuItem from "./MenuItem";
-import MenuContext from "./MenuContext";
+import { useMenuContext } from "./MenuContext";
 
 function Menu() {
-  const links = useContext(MenuContext);
+  const { links } = useMenuContext();
   return (
     <nav>
       <ul className="menu">
