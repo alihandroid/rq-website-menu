@@ -1,22 +1,17 @@
 import MenuItem from "./MenuItem";
-function Menu() {
+
+function Menu({ links }) {
   return (
     <nav>
       <ul className="menu">
-        <MenuItem href="/" icon="home">
-          Home
-        </MenuItem>
-        <MenuItem href="/services" icon="services">
-          Services
-        </MenuItem>
-        <MenuItem href="/pricing" icon="pricing">
-          Pricing
-        </MenuItem>
-        <MenuItem href="/blog" icon="blog">
-          Blog
-        </MenuItem>
+        {links.map(({ title, ...props }) => (
+          <MenuItem key={title} {...props}>
+            {title}
+          </MenuItem>
+        ))}
       </ul>
     </nav>
   );
 }
+
 export default Menu;
